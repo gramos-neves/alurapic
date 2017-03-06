@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="alurapic">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/controllers/bilhete-controller.js"></script>
     </head>
-    <body>
+    <body ng-controller="BilheteController">
         <div class="container">
             <h1 class="text-center">Alurapic</h1>
+          <div class="table-responsive">
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th>Hora Inicial</th>
+                        <th>Hora Final</th>
+                        <th>Tronco</th>
+                        <th>Ramal</th>
+                        <th>Origem</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th>Duracao</th>
+                        <th>Toque</th>
+                     </tr>
+                </thead>
+                 <tbody ng-repeat="b in bilhetes">
+                        <tr class="odd gradeX">
+                          <td>{{b.horaInicial}}</td> 
+                          <td>{{b.horaFinal}}</td> 
+                          <td>{{b.tronco}}</td> 
+                          <td>{{b.ramal}}</td> 
+                          <td>{{b.origem}}</td> 
+                          <td>{{b.tipoLigacao}}</td> 
+                          <td>{{b.data}}</td> 
+                          <td>{{b.duracaoLigacao}}</td>
+                          <td> {{b.duracaoToque}}</td> 
+                    </tbody>
+                
+            </table>
+          </div> 
+            
+                        
         </div> <!-- fim container -->        
     </body>
 </html>
